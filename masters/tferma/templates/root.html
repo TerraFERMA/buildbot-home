@@ -64,7 +64,7 @@
   <li class="{{ item_class.next() }}"><a href="waterfall?category=dorsal">Dorsal builds</a></li>
 </ul>
 
-{%- if authz.advertiseAction('cleanShutdown') -%}
+{%- if authz.advertiseAction('cleanShutdown', request) -%}
 {%- if shutting_down -%}
 Master is shutting down<br/>
 {{ forms.cancel_clean_shutdown(cancel_shutdown_url, authz) }}
@@ -72,8 +72,6 @@ Master is shutting down<br/>
 {{ forms.clean_shutdown(shutdown_url, authz) }}
 {%- endif -%}
 {%- endif -%}
-
-<p><i>This and other pages can be overridden and customized.</i></p>
 
 </div>
 
